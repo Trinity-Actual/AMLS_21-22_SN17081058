@@ -140,20 +140,15 @@ As mentioned in section 3, these are the saved model files for trained untuned a
 # 5. Running Code to Obtain Same Results
 The files to run to obtain all the preprocessed datasets, saved trained models and plots are listed as follows, they are to be run in the order given by the numbering:
 
-Dataset preprocessing
 1. Data-Preprocessing.ipynb
-
-Binary Classification Task
 2. Binary-Task-SVM.ipynb
 3. Binary-Task-CNN.ipynb
-
-Multi-class Classification Task
 4. Multiclass-Task-SVM.ipynb
 5. Multiclass-Task-CNN.ipynb
-
-Evaluation of Extra Test Dataset using trained models
 6. Binary-Task-Eval.ipynb
 7. Multiclass-Task-Eval.ipynb
+
+Dataset preprocessing is done in file 1. Binary Classification Task model training validation and testing on original given dataset is done in 2 and 3. Multi-class Classification Task mdel training validation and testing on original given dataset is done in 4 and 5. Evaluation of Extra Test Dataset using trained models is done in 6 and 7.
 
 Within the Data preprocessing and Binary/Multiclass task model training notebooks (number 1 to 5) the results of the PCA optimal number of components, classification report and confusion matrix as well as other metric used to assess model performance will be printed out after execution ofthe respective code cells. These values were used in conjunction with the plots obtained to be included into the report.
 
