@@ -140,18 +140,18 @@ As mentioned in section 3, these are the saved model files for trained untuned a
 # 5. Running Code to Obtain Same Results
 The files to run to obtain all the preprocessed datasets, saved trained models and plots are listed as follows, they are to be run in the order given by the numbering:
 
-**Dataset preprocessing**
+Dataset preprocessing
 1. Data-Preprocessing.ipynb
 
-**Binary Classification Task**
+Binary Classification Task
 2. Binary-Task-SVM.ipynb
 3. Binary-Task-CNN.ipynb
 
-**Multi-class Classification Task**
+Multi-class Classification Task
 4. Multiclass-Task-SVM.ipynb
 5. Multiclass-Task-CNN.ipynb
 
-**Evaluation of Extra Test Dataset using trained models**
+Evaluation of Extra Test Dataset using trained models
 6. Binary-Task-Eval.ipynb
 7. Multiclass-Task-Eval.ipynb
 
