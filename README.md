@@ -16,7 +16,7 @@ The repository was remade due to pull request error in original repository. Ther
     - [Dataset Files.ipynb](#47-dataset-files)
     - [Model files.ipynb](#48-model-files)
     - [Model_Evaulation Files.ipynb](#49-model_evaulation-files)
-5. [Running Code to Obtain Same Results.ipynb](#5-running-code-to-obtain-results)
+5. [Running Code to Obtain Same Results](#5-running-code-to-obtain-results)
 
 # 1. Overview of Task
 The task given is an image classification task regarding Magnetic Resonance Imaging (MRI) images of various brain scans. This is based off the problem on Kaggle regarding [Brain Tumor Classification](https://www.kaggle.com/sartajbhuvaji/brain-tumor-classification-mri). Given an initial dataset of 3000 MRI images with their respective labels containing four unique classes, no_tumor, glioma_tumor, meningioma_tumor and pituitary_tumor. We are to train, validate and test machine learning or deep learning models to solve two problems surrounding the given dataset as follows:
@@ -64,7 +64,7 @@ All remaining commits for work done were pushed to the `Coding` branch and docum
 
 # 4. Role of each File
 Briefly explains role of the main notebooks and data files created. Full and additional explanations are found in markdown cells and comments in the various notebooks.
-#### 4.1 functions.ipynb 
+### 4.1 functions.ipynb 
 Contains reusable functions used in various task notebooks to streamline code. The functions created are:
 ```
 - image_array_resize
@@ -75,7 +75,7 @@ Contains reusable functions used in various task notebooks to streamline code. T
 - SVM_predictions
 ```
 Their functionality can be found in code comments within `functions.ipynb`
-#### 4.2 Data-Preprocessing.ipynb
+### 4.2 Data-Preprocessing.ipynb
 Contains code which carries out various data preprocessing steps on the original MRI image dataset:
 1. Exploring the dataset to discover unique labels, number of samples per class and shape of dataframes
 2. Carries out relabelling of labels in `label.csv` for both Binary and Multi-class tasks
@@ -87,7 +87,7 @@ Contains code which carries out various data preprocessing steps on the original
     - Images for CNN are resized to 50 * 50, the image array for CNN is then converted to a 2D array file and saved as `CNN_Images_2D_DF.pkl` in the `dataset` folder.
 4. Finds optimal number of principal components to use for PCA in SVM image data
 
-#### 4.3 Binary-Task-SVM.ipynb
+### 4.3 Binary-Task-SVM.ipynb
 Contains code which:
 1. Retrives the `Image_DF_Flat.pkl` and `Y_Binary_Label.pkl` files, conducts PCA on the images to extract the most prominent features in the MRI image dataset. 
 2. Trains the SVM models
@@ -98,7 +98,7 @@ Contains code which:
 5. Saves the trained SVM models into the `Models/Binary-Classification` folder
 6. Saves any plots created into `Plots` folder.
 
-#### 4.4 Binary-Task-CNN.ipynb
+### 4.4 Binary-Task-CNN.ipynb
 Contains code which:
 1. Retrives the `CNN_Images_2D_DF.pkl` and `Y_Binary_Label.pkl` files.
 2. Generates the CNN model architecture based on AlexNet structure and trains the CNN model
@@ -107,7 +107,7 @@ Contains code which:
 5. Saves the trained CNN models into the `Models/Binary-Classification/CNN` folder
 6. Saves any plots created into `Plots` folder.
 
-#### 4.5 Multiclass-Task-SVM.ipynb
+### 4.5 Multiclass-Task-SVM.ipynb
 Contains code which:
 1. Retrives the `Image_DF_Flat.pkl` and `Y_Multiclass_Label.pkl` files, conducts PCA on the images to extract the most prominent features in the MRI image dataset. 
 2. Trains the SVM models
@@ -118,7 +118,7 @@ Contains code which:
 5. Saves the trained SVM models into the `Models/Multiclassification` folder
 6. Saves any plots created into `Plots` folder.
 
-#### 4.6 Multiclass-Task-CNN.ipynb
+### 4.6 Multiclass-Task-CNN.ipynb
 Contains code which:
 1. Retrives the `CNN_Images_2D_DF.pkl` and `Y_Multiclass_Label.pkl` files.
 2. Generates the CNN model architecture based on AlexNet structure and trains the CNN model
@@ -127,14 +127,48 @@ Contains code which:
 5. Saves the trained CNN models into the `Models/Multiclassification/CNN` folder
 6. Saves any plots created into `Plots` folder.
 
-#### 4.7 Dataset Files
+### 4.7 Dataset Files
 As mentioned previously, contains all datasets provided by module organisers (Original and extra test dataset) as well as relabeled target label data and preprocessed image arrays for SVM and CNN models
 
-#### 4.8 Model files
+### 4.8 Model files
 As mentioned in section 3, these are the saved model files for trained untuned and tuned (Validated) SVM and CNN models for the binary and multi-class tasks. These model files can be reloaded to be used for predictions in separate notebooks, which was done in `Binary-Task-Eval.ipynb` and `Multiclass-Task-Eval.ipynb`
 
-#### 4.9 Model_Evaulation Files
+### 4.9 Model_Evaulation Files
 - `Binary-Task-Eval.ipynb` contains code which loads trained model files for the **binary classification** task, untuned and tuned SVM and the CNN. It then uses them to run predictions on the `Extra_test_dataset` provided by the module organisers and prints out the `classification_report` and `confusion_matrix` as well as a few other metrics to help assess the out of sample prediction performance of the models.
 - `Multiclass-Task-Eval.ipynb` contains code which loads trained model files for the **multiclass classification** task, untuned and tuned SVM and the CNN. It then uses them to run predictions on the `Extra_test_dataset` provided by the module organisers and prints out the `classification_report` and `confusion_matrix` as well as a few other metrics to help assess the out of sample prediction performance of the models.
 
 # 5. Running Code to Obtain Same Results
+The files to run to obtain all the preprocessed datasets, saved trained models and plots are listed as follows, they are to be run in the order given by the numbering:
+
+**Dataset preprocessing**
+1. Data-Preprocessing.ipynb
+**Binary Classification Task**
+2. Binary-Task-SVM.ipynb
+3. Binary-Task-CNN.ipynb
+**Multi-class Classification Task**
+4. Multiclass-Task-SVM.ipynb
+5. Multiclass-Task-CNN.ipynb
+**Evaluation of Extra Test Dataset using trained models**
+6. Binary-Task-Eval.ipynb
+7. Multiclass-Task-Eval.ipynb
+
+Within the Data preprocessing and Binary/Multiclass task model training notebooks (number 1 to 5) the results of the PCA optimal number of components, classification report and confusion matrix as well as other metric used to assess model performance will be printed out after execution ofthe respective code cells. These values were used in conjunction with the plots obtained to be included into the report.
+
+Each notebook file can be run from beginning to end in order of their cells and will produce the repsective results/outputs as per the markdown cells and comments in each notebook describing the process. The files which will be created/overlapped after having run all the notebook files are listed below:
+```
+- Image_DF_Flat.pkl
+- CNN_Images_2D_DF.pkl
+- Y_Binary_Label.pkl
+- Y_Multiclass_Label.pkl
+- Untuned_SVM_model.sav
+- Tuned_SVM_model.sav
+- Binary_CNN.json
+- Binary_CNN_Model_Weights
+- Untuned_multiclass_SVM.sav
+- Tuned_multiclass_SVM.sav
+- Multiclass_CNN.json
+- Multiclass_CNN_Model_Weights
+- All image files for plots in Plots folder
+```
+
+
