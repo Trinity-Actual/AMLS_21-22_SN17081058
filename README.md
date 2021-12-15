@@ -16,7 +16,7 @@ The repository was remade due to pull request error in original repository. Ther
     - [Dataset Files.ipynb](#47-dataset-files)
     - [Model files.ipynb](#48-model-files)
     - [Model_Evaulation Files.ipynb](#49-model_evaulation-files)
-5. [Running Code to Obtain Same Results](#5-running-code-to-obtain-results)
+5. [Running Code to Obtain Same Results](#5-running-code-to-obtain-same-results)
 
 # 1. Overview of Task
 The task given is an image classification task regarding Magnetic Resonance Imaging (MRI) images of various brain scans. This is based off the problem on Kaggle regarding [Brain Tumor Classification](https://www.kaggle.com/sartajbhuvaji/brain-tumor-classification-mri). Given an initial dataset of 3000 MRI images with their respective labels containing four unique classes, no_tumor, glioma_tumor, meningioma_tumor and pituitary_tumor. We are to train, validate and test machine learning or deep learning models to solve two problems surrounding the given dataset as follows:
@@ -48,9 +48,9 @@ From the requirements file the libraries used are:
 
 # 3. Organisation of Repository
 The repository is organised as follows:<br/>
-The initial commmits were done on the `main` branch, the initial commits contain partially completed code due to the originally create repository having a conflict resolution errror. 
+The initial commmits were done on the `main` branch, the initial commits contain partially completed code due to the originally created repository having a conflict resolution errror. 
 
-All remaining commits for work done were pushed to the `Coding` branch and documents the progress of the code used to solve the two tasks. The fully completed Code was then merged into `main` via Pull Request.
+All remaining commits for work done were pushed to the `Coding` branch and documents the progress of the code through the various commits used to solve the two tasks. The fully completed Code was then merged into `main` via Pull Request.
 
 #### Folder and File Organisation Overview
 - `Model_Evalutation` contains two notebooks which load trained models and uses them to run predictions on the `Extra_test_dataset` provided by the module organiser.
@@ -60,7 +60,7 @@ All remaining commits for work done were pushed to the `Coding` branch and docum
     - All created data files are in the base folder and are saved as pickle files.
     - `label.csv` in the base folder is the starting datset label file, this file came with the original images contained in the `image` folder (3000 MRI images)
     - `Extra_test_dataset` contains the images and label file of the extra test dataset provided by the module organisers one week before the deadline for extra testing.
-- All remaining jupyter notebooks in the base repository are files which encompass model training, validation and testing as well as dataset preprocessing and a function file which contains reused functions which can be referenced by the notebooks. Their specific roles are explained in section 3.
+- All remaining jupyter notebooks in the base repository are files which encompass model training, validation and testing as well as dataset preprocessing and a function file which contains reused functions which can be referenced by the notebooks. Their specific roles are explained in section 4.
 
 # 4. Role of each File
 Briefly explains role of the main notebooks and data files created. Full and additional explanations are found in markdown cells and comments in the various notebooks.
@@ -141,13 +141,13 @@ As mentioned in section 3, these are the saved model files for trained untuned a
 The files to run to obtain all the preprocessed datasets, saved trained models and plots are listed as follows, they are to be run in the order given by the numbering:
 
 **Dataset preprocessing**
-1. Data-Preprocessing.ipynb
+1. Data-Preprocessing.ipynb<br/>
 **Binary Classification Task**
 2. Binary-Task-SVM.ipynb
-3. Binary-Task-CNN.ipynb
+3. Binary-Task-CNN.ipynb<br/>
 **Multi-class Classification Task**
 4. Multiclass-Task-SVM.ipynb
-5. Multiclass-Task-CNN.ipynb
+5. Multiclass-Task-CNN.ipynb<br/>
 **Evaluation of Extra Test Dataset using trained models**
 6. Binary-Task-Eval.ipynb
 7. Multiclass-Task-Eval.ipynb
