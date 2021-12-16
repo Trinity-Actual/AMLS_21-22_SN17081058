@@ -53,7 +53,6 @@ The initial commmits were done on the `main` branch, the initial commits contain
 All remaining commits for work done were pushed to the `Coding` branch and documents the progress of the code through the various commits used to solve the two tasks. The fully completed Code was then merged into `main` via Pull Request.
 
 #### Folder and File Organisation Overview
-- `Model_Evalutation` contains two notebooks which load trained models and uses them to run predictions on the `Extra_test_dataset` provided by the module organiser.
 - `Models` contains the saved model files which have been split into binary and multi-class task folders. Within each folder the tuned and untuned SVM models are present with the CNN model saved into the CNN folder `Models\Binary_CNN\CNN` for example. The saved CNN models are in two files, a json file containing the model architecture and the model weights file. This was to reduce file size so it could be uploaded to Github without using LFS.
 - `Plots` contains all relevant images of graphs created in the code which were subsequently included in the report. This is to verify that the plots created are the same as the ones in the report.
 - `dataset` contains all dataset files provided by the module organisers as well as dataset files created during coding/data preprocessing. 
