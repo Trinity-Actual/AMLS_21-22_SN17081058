@@ -55,6 +55,7 @@ All remaining commits for work done were pushed to the `Coding` branch and docum
 #### Folder and File Organisation Overview
 - `Models` contains the saved model files which have been split into binary and multi-class task folders. Within each folder the tuned and untuned SVM models are present with the CNN model saved into the CNN folder `Models\Binary_CNN\CNN` for example. The saved CNN models are in two files, a json file containing the model architecture and the model weights file. This was to reduce file size so it could be uploaded to Github without using LFS.
 - `Plots` contains all relevant images of graphs created in the code which were subsequently included in the report. This is to verify that the plots created are the same as the ones in the report.
+- `Plots_Original` is a backup for the `Plots` folder which contains all original plots used in the report. Both folders should contain the same images in the original repository presented. In the event of accidental overwritting in `Plots`, refer to `Plots_Original`.
 - `dataset` contains all dataset files provided by the module organisers as well as dataset files created during coding/data preprocessing. 
     - All created data files are in the base folder and are saved as pickle files.
     - `label.csv` in the base folder is the starting datset label file, this file came with the original images contained in the `image` folder (3000 MRI images)
@@ -137,6 +138,8 @@ As mentioned in section 3, these are the saved model files for trained untuned a
 - `Multiclass-Task-Eval.ipynb` contains code which loads trained model files for the **multiclass classification** task, untuned and tuned SVM and the CNN. It then uses them to run predictions on the `Extra_test_dataset` provided by the module organisers and prints out the `classification_report` and `confusion_matrix` as well as a few other metrics to help assess the out of sample prediction performance of the models.
 
 # 5. Running Code to Obtain Same Results
+**NOTE:** All code lines which are used to save models and any plots have been commented out in all the following notebooks, this is to prevent accidental overwriting of the plots with new ones upon code run test as there might be changes in the weights and predictions etc due to slight variance in the model training process (for CNNs, was unable to fix training batches). There is an additional folder `Plots_Original` which is basically a backup for the `Plots` folder which contains all original plots used in the report. Both folders should contain the same images in the original repository presented. In the event of accidental overwritting in `Plots`, refer to `Plots_Original`.
+
 The files to run to obtain all the preprocessed datasets, saved trained models and plots are listed as follows, they are to be run in the order given by the numbering:
 
 1. Data-Preprocessing.ipynb
